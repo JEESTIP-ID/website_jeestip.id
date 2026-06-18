@@ -36,3 +36,11 @@ Website terdiri dari tiga area utama:
 - Menggunakan Better Auth untuk autentikasi admin dan customer.
 - Menyediakan API yang aman, tervalidasi, dan memiliki proteksi agar request CRUD tidak double fire.
 - Menyediakan dokumentasi teknis agar mudah dikembangkan menggunakan AI Codex.
+
+## 3. Role dan Hak Akses
+
+| Role | Akses |
+|---|---|
+| Public Visitor | Melihat landing page, rate topup, rate jastip, rate transfer bank China, dan tombol login. |
+| Customer | Login menggunakan `id_customer` dan password. Melihat invoice, fee, dan transaksi pembelian milik sendiri. |
+| Admin | Login menggunakan email dan password. Mengelola semua data admin panel. |
