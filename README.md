@@ -62,3 +62,22 @@ npm run build
 ```
 
 Data yang tampil saat ini adalah mock data frontend. Pada halaman login, identifier berbentuk email membuka demo admin; identifier selain email membuka demo customer.
+
+## Deploy ke Vercel
+
+Repository sudah memiliki `vercel.json` di root project. Konfigurasi tersebut:
+
+- Menginstal dependency menggunakan `npm ci` di folder `frontend/`.
+- Menjalankan build produksi Angular.
+- Mempublikasikan `frontend/dist/frontend/browser`.
+- Mengarahkan URL Angular seperti `/admin/dashboard` dan `/customer/invoices` ke `index.html`.
+
+Langkah deployment:
+
+1. Push repository ke GitHub, GitLab, atau Bitbucket.
+2. Import repository tersebut di Vercel.
+3. Biarkan **Root Directory** pada root repository.
+4. Vercel akan membaca konfigurasi build dari `vercel.json`.
+5. Jalankan **Deploy**.
+
+Versi Node.js minimum yang digunakan adalah Node.js 20.19.
