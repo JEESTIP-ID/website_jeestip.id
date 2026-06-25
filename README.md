@@ -44,3 +44,21 @@ Website terdiri dari tiga area utama:
 | Public Visitor | Melihat landing page, rate topup, rate jastip, rate transfer bank China, dan tombol login. |
 | Customer | Login menggunakan `id_customer` dan password. Melihat invoice, fee, dan transaksi pembelian milik sendiri. |
 | Admin | Login menggunakan email dan password. Mengelola semua data admin panel. |
+
+## Frontend
+
+Frontend berada di folder `frontend/` dan menggunakan Angular 21, Tailwind CSS 4, serta primitive Spartan UI.
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+Buka `http://localhost:4200`. Build produksi dapat dibuat dengan:
+
+```bash
+npm run build
+```
+
+Data yang tampil saat ini adalah mock data frontend. Pada halaman login, identifier berbentuk email membuka demo admin; identifier selain email membuka demo customer.
