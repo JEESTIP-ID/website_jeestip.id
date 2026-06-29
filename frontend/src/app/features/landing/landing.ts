@@ -40,7 +40,19 @@ import { BrnButton } from '@spartan-ng/brain/button';
             <div class="grid gap-0 lg:grid-cols-[.82fr_1.18fr]">
               <aside class="flex min-h-[360px] flex-col bg-primary p-7 text-white">
                 <span class="w-max rounded-full bg-white px-4 py-2 text-sm font-medium text-primary">Rate Jastip</span>
-                <p class="mt-auto text-sm text-white/60">Rate utama</p>
+                <div class="my-8 grid place-items-center rounded-[28px] border border-white/10 bg-white/8 p-6">
+                  <svg class="h-36 w-full max-w-[260px]" viewBox="0 0 280 170" fill="none" aria-hidden="true">
+                    <rect x="48" y="62" width="110" height="82" rx="20" fill="#FFD84D" />
+                    <path d="M77 65c0-24 12-38 31-38s31 14 31 38" stroke="white" stroke-width="10" stroke-linecap="round" />
+                    <rect x="142" y="82" width="74" height="62" rx="14" fill="white" />
+                    <path d="M142 104h74M179 82v62" stroke="#10243E" stroke-opacity=".18" stroke-width="4" />
+                    <circle cx="207" cy="45" r="25" fill="#84E0C3" />
+                    <path d="M197 45h20M207 35v20" stroke="#10243E" stroke-width="5" stroke-linecap="round" />
+                    <path d="M62 144h168" stroke="white" stroke-opacity=".28" stroke-width="8" stroke-linecap="round" />
+                    <path d="M83 101h39M83 119h26" stroke="#10243E" stroke-width="7" stroke-linecap="round" />
+                  </svg>
+                </div>
+                <p class="text-sm text-white/60">Rate utama</p>
                 <div class="mt-3 rounded-[28px] bg-white p-6 text-primary">
                   <p class="text-sm font-medium text-slate">untuk 1 Yuan RMB</p>
                   <p class="mt-2 flex items-baseline gap-2 whitespace-nowrap text-ink-deep">
@@ -104,10 +116,45 @@ import { BrnButton } from '@spartan-ng/brain/button';
               <span class="rounded-full bg-surface px-3 py-1 text-xs font-medium text-steel">JEESTIP rate board</span>
             </div>
             <div class="grid gap-5 bg-surface-soft p-5 lg:grid-cols-[.75fr_1.25fr]">
-              <aside class="rounded-[28px] bg-yellow p-6 text-primary">
+              <aside class="flex min-h-[420px] flex-col overflow-hidden rounded-[28px] bg-yellow p-6 text-primary">
                 <p class="text-sm font-medium">Kurs dikonfirmasi</p>
                 <p class="display mt-12 text-4xl">Sebelum transfer</p>
-                <p class="mt-4 text-sm leading-6 text-primary/70">CS mengirim final rate dan nominal IDR sesuai tier RMB yang dipilih.</p>
+                <div class="my-7 rounded-[28px] bg-white/60 p-5">
+                  <svg class="h-40 w-full" viewBox="0 0 300 176" fill="none" aria-hidden="true">
+                    <ellipse cx="150" cy="151" rx="105" ry="10" fill="#10243E" opacity=".12" />
+                    <g transform="rotate(-8 70 86)">
+                      <rect x="24" y="45" width="106" height="72" rx="14" fill="#10243E" />
+                      <rect x="36" y="57" width="82" height="48" rx="10" stroke="white" stroke-opacity=".35" stroke-width="4" />
+                      <circle cx="77" cy="81" r="15" fill="#FFD84D" />
+                      <path d="M56 101h42" stroke="white" stroke-width="6" stroke-linecap="round" />
+                      <text x="49" y="40" fill="#10243E" font-size="24" font-weight="800">IDR</text>
+                    </g>
+                    <path d="M136 82h49M171 62l21 21-21 21" stroke="#10243E" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+                    <g>
+                      <circle cx="227" cy="84" r="42" fill="#84E0C3" />
+                      <circle cx="227" cy="84" r="28" stroke="#10243E" stroke-opacity=".22" stroke-width="5" />
+                      <path d="M227 62v44M213 73h20a12 12 0 0 1 0 24h-20" stroke="#10243E" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+                      <text x="198" y="151" fill="#10243E" font-size="24" font-weight="800">RMB</text>
+                    </g>
+                    <circle cx="252" cy="39" r="17" fill="#FF7D61" />
+                    <path d="m244 39 5 5 11-12" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <p class="text-sm leading-6 text-primary/70">CS mengirim final rate dan nominal IDR sesuai tier RMB yang dipilih.</p>
+                <div class="mt-auto grid gap-2 pt-5 text-sm">
+                  <div class="flex items-center gap-2 rounded-2xl bg-white/55 px-4 py-3">
+                    <span class="grid size-7 shrink-0 place-items-center rounded-full bg-primary text-xs font-semibold text-white">1</span>
+                    <span>Kirim nominal IDR</span>
+                  </div>
+                  <div class="flex items-center gap-2 rounded-2xl bg-white/55 px-4 py-3">
+                    <span class="grid size-7 shrink-0 place-items-center rounded-full bg-primary text-xs font-semibold text-white">2</span>
+                    <span>CS konfirmasi kurs RMB</span>
+                  </div>
+                  <div class="flex items-center gap-2 rounded-2xl bg-white/55 px-4 py-3">
+                    <span class="grid size-7 shrink-0 place-items-center rounded-full bg-primary text-xs font-semibold text-white">3</span>
+                    <span>Transfer diproses</span>
+                  </div>
+                </div>
               </aside>
 
               <div id="rates" class="grid items-stretch gap-5 md:grid-cols-2">
