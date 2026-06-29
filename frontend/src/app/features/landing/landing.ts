@@ -27,7 +27,7 @@ import { BrnButton } from '@spartan-ng/brain/button';
       <section id="jastip" class="scroll-mt-20 bg-canvas py-20 sm:py-24 lg:py-28">
         <div class="mx-auto max-w-7xl px-5 lg:px-8">
           <div class="mx-auto max-w-6xl rounded-[32px] bg-surface-soft p-7 text-center sm:p-9">
-              <span class="inline-flex rounded-full bg-yellow-light px-4 py-2 text-sm font-semibold text-yellow-dark">Jastip Belanja Marketplace China</span>
+            <span class="inline-flex rounded-full bg-yellow-light px-4 py-2 text-sm font-semibold text-yellow-dark">Jastip Belanja Marketplace China</span>
               <h1 class="display mx-auto mt-6 max-w-5xl text-5xl text-ink-deep sm:text-6xl lg:text-[72px]">
                 Jastip belanja dari Alibaba, Taobao, dan 1688
               </h1>
@@ -202,7 +202,7 @@ import { BrnButton } from '@spartan-ng/brain/button';
 
       <section id="transfer" class="scroll-mt-20 bg-surface py-24">
         <div class="mx-auto max-w-7xl px-5 lg:px-8">
-          <div class="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
+          <div class="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[.8fr_1.2fr] lg:items-start">
             <div>
               <span class="rounded-full bg-yellow-light px-4 py-2 text-sm font-semibold text-yellow-dark">Transfer Bank China</span>
               <h2 class="display mt-5 text-4xl text-ink-deep sm:text-5xl">Transfer cepat. Biaya jelas.</h2>
