@@ -208,8 +208,8 @@ import { BrnButton } from '@spartan-ng/brain/button';
               <h2 class="display mt-5 text-4xl text-ink-deep sm:text-5xl">Transfer cepat. Biaya jelas.</h2>
               <p class="mt-5 max-w-lg leading-7 text-slate">Pembayaran supplier dan kebutuhan bisnis di China jadi lebih sederhana.</p>
             </div>
-            <div class="grid gap-5 sm:grid-cols-2">
-              <article class="whiteboard-shadow relative overflow-hidden rounded-[32px] border-2 border-coral bg-coral p-7 text-primary">
+            <div class="grid items-stretch gap-5 sm:grid-cols-2">
+              <article class="whiteboard-shadow relative flex h-full min-h-[430px] flex-col overflow-hidden rounded-[32px] border-2 border-coral bg-coral p-7 text-primary">
                 <div class="absolute right-5 top-5 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[.08em]">OPEN</div>
                 <div class="grid size-12 place-items-center rounded-2xl bg-white/75 text-primary" aria-hidden="true">
                   <svg class="size-7" viewBox="0 0 24 24" fill="none">
@@ -220,8 +220,8 @@ import { BrnButton } from '@spartan-ng/brain/button';
                 </div>
                 <p class="mt-8 text-sm font-semibold uppercase tracking-[.12em] text-primary/65">Transfer Bank China</p>
                 <h3 class="mt-2 text-4xl font-semibold tracking-tight text-ink-deep">Same Day</h3>
-                <p class="mt-3 text-sm leading-6 text-slate">Diproses di hari yang sama untuk pembayaran supplier dan kebutuhan reguler.</p>
-                <div class="mt-8 rounded-2xl bg-white/75 p-5">
+                <p class="mt-3 min-h-12 text-sm leading-6 text-slate">Diproses di hari yang sama untuk pembayaran supplier dan kebutuhan reguler.</p>
+                <div class="mt-auto rounded-2xl bg-white/75 p-5">
                   <p class="text-xs font-semibold uppercase tracking-[.08em] text-slate">Rate per RMB</p>
                   <p class="mt-2 flex items-baseline gap-2 whitespace-nowrap text-ink-deep">
                     <span class="text-xl font-medium">Rp</span>
@@ -229,7 +229,7 @@ import { BrnButton } from '@spartan-ng/brain/button';
                   </p>
                 </div>
               </article>
-              <article class="whiteboard-shadow relative overflow-hidden rounded-[32px] border-2 border-teal bg-teal p-7 text-primary">
+              <article class="whiteboard-shadow relative flex h-full min-h-[430px] flex-col overflow-hidden rounded-[32px] border-2 border-teal bg-teal p-7 text-primary">
                 <div class="absolute right-5 top-5 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[.08em]">OPEN</div>
                 <div class="grid size-12 place-items-center rounded-2xl bg-white/75 text-primary" aria-hidden="true">
                   <svg class="size-7" viewBox="0 0 24 24" fill="none">
@@ -239,8 +239,8 @@ import { BrnButton } from '@spartan-ng/brain/button';
                 </div>
                 <p class="mt-8 text-sm font-semibold uppercase tracking-[.12em] text-primary/65">Transfer Bank China</p>
                 <h3 class="mt-2 text-4xl font-semibold tracking-tight text-ink-deep">Instant</h3>
-                <p class="mt-3 text-sm leading-6 text-slate">Prioritas proses tercepat untuk kebutuhan transfer yang lebih mendesak.</p>
-                <div class="mt-8 rounded-2xl bg-white/75 p-5">
+                <p class="mt-3 min-h-12 text-sm leading-6 text-slate">Prioritas proses tercepat untuk kebutuhan transfer yang lebih mendesak.</p>
+                <div class="mt-auto rounded-2xl bg-white/75 p-5">
                   <p class="text-xs font-semibold uppercase tracking-[.08em] text-slate">Rate per RMB</p>
                   <p class="mt-2 flex items-baseline gap-2 whitespace-nowrap text-ink-deep">
                     <span class="text-xl font-medium">Rp</span>
