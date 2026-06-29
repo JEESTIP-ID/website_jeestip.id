@@ -1,9 +1,12 @@
+import { NgTemplateOutlet } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 
+type DashboardIcon = 'customers' | 'invoice' | 'cart' | 'fees' | 'shipping' | 'process' | 'check';
+
 @Component({
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, NgTemplateOutlet],
   template: `
     <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
       <div>
@@ -18,7 +21,9 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
       @for (card of cards; track card.label) {
         <article class="panel flex min-w-0 flex-col p-6">
           <div class="flex min-h-11 items-start justify-between gap-3">
-            <span class="grid size-11 place-items-center rounded-2xl text-lg" [class]="card.color">{{ card.icon }}</span>
+            <span class="grid size-11 place-items-center rounded-2xl text-primary" [class]="card.color" aria-hidden="true">
+              <ng-container [ngTemplateOutlet]="dashboardIcon" [ngTemplateOutletContext]="{ icon: card.icon }" />
+            </span>
             <span class="flex min-h-8 max-w-[8.5rem] items-center justify-center rounded-full bg-teal px-3 py-1 text-center text-xs font-semibold leading-4 text-moss">{{ card.change }}</span>
           </div>
           <p class="mt-8 text-sm text-steel">{{ card.label }}</p>
@@ -39,7 +44,9 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
         <div class="divide-y divide-hairline-soft">
           @for (a of activity; track a.title) {
             <div class="flex items-center gap-4 p-5">
-              <span class="grid size-10 shrink-0 place-items-center rounded-full bg-surface">{{ a.icon }}</span>
+              <span class="grid size-10 shrink-0 place-items-center rounded-full bg-surface text-primary" aria-hidden="true">
+                <ng-container [ngTemplateOutlet]="dashboardIcon" [ngTemplateOutletContext]="{ icon: a.icon }" />
+              </span>
               <div class="min-w-0 flex-1">
                 <p class="truncate text-sm font-medium text-ink">{{ a.title }}</p>
                 <p class="text-xs text-steel">{{ a.detail }}</p>
@@ -70,32 +77,58 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
         }
       </section>
     </div>
+
+    <ng-template #dashboardIcon let-icon="icon">
+      @switch (icon) {
+        @case ('customers') {
+          <svg class="size-5" viewBox="0 0 24 24" fill="none"><path d="M9 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM3.5 20c.7-3.5 2.7-5.5 5.5-5.5s4.8 2 5.5 5.5M16.5 10.5a3 3 0 1 0 0-6M15.5 14.5c2.6.2 4.3 2 5 5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
+        }
+        @case ('invoice') {
+          <svg class="size-5" viewBox="0 0 24 24" fill="none"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" /><path d="M9 8h6M9 12h6M9 16h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
+        }
+        @case ('cart') {
+          <svg class="size-5" viewBox="0 0 24 24" fill="none"><path d="M3 4h2l2.3 10.5a2 2 0 0 0 2 1.5h6.9a2 2 0 0 0 1.9-1.4L20 8H7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /><path d="M10 20h.01M17 20h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round" /></svg>
+        }
+        @case ('fees') {
+          <svg class="size-5" viewBox="0 0 24 24" fill="none"><path d="M4 7h16v10H4V7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" /><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM7 10h.01M17 14h.01" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" /></svg>
+        }
+        @case ('shipping') {
+          <svg class="size-5" viewBox="0 0 24 24" fill="none"><path d="M3 7h11v10H3V7ZM14 11h3l3 3v3h-6v-6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" /><path d="M7 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM17 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" stroke="currentColor" stroke-width="1.8" /></svg>
+        }
+        @case ('process') {
+          <svg class="size-5" viewBox="0 0 24 24" fill="none"><path d="M6 12a6 6 0 0 1 10.2-4.3L18 9M18 9V5M18 9h-4M18 12a6 6 0 0 1-10.2 4.3L6 15M6 15v4M6 15h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        }
+        @case ('check') {
+          <svg class="size-5" viewBox="0 0 24 24" fill="none"><path d="M20 7 10 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        }
+      }
+    </ng-template>
   `,
 })
 export class DashboardComponent {
   admin = false;
-  cards: any[] = [];
-  activity = [
-    { icon: '▤', title: 'Invoice INV-2026-0148 dibuat', detail: 'CUST-0128 · Andi Saputra', time: '8 mnt' },
-    { icon: '▣', title: 'Status transaksi diperbarui', detail: 'CNID884201 · On ship', time: '24 mnt' },
-    { icon: '◇', title: 'Fee FEE-0098 telah dibayar', detail: 'Rp 1.275.000', time: '1 jam' },
-    { icon: '♙', title: 'Customer baru ditambahkan', detail: 'CUST-0142 · Siska Amelia', time: '2 jam' },
+  cards: Array<{ label: string; value: string; change: string; icon: DashboardIcon; color: string }> = [];
+  activity: Array<{ icon: DashboardIcon; title: string; detail: string; time: string }> = [
+    { icon: 'invoice', title: 'Invoice INV-2026-0148 dibuat', detail: 'CUST-0128 · Andi Saputra', time: '8 mnt' },
+    { icon: 'shipping', title: 'Status transaksi diperbarui', detail: 'CNID884201 · On ship', time: '24 mnt' },
+    { icon: 'fees', title: 'Fee FEE-0098 telah dibayar', detail: 'Rp 1.275.000', time: '1 jam' },
+    { icon: 'customers', title: 'Customer baru ditambahkan', detail: 'CUST-0142 · Siska Amelia', time: '2 jam' },
   ];
 
   constructor(route: ActivatedRoute) {
     this.admin = route.snapshot.data['role'] === 'admin';
     this.cards = this.admin
       ? [
-          { label: 'Total customer', value: '1.284', change: '+12 bulan ini', icon: '♙', color: 'bg-lavender' },
-          { label: 'Invoice aktif', value: '328', change: '+8.4%', icon: '▤', color: 'bg-rose' },
-          { label: 'Dalam pengiriman', value: '86', change: '12 tiba segera', icon: '▣', color: 'bg-yellow' },
-          { label: 'Fee belum dibayar', value: '24', change: 'Rp 18,4 jt', icon: '◇', color: 'bg-coral' },
+          { label: 'Total customer', value: '1.284', change: '+12 bulan ini', icon: 'customers', color: 'bg-lavender' },
+          { label: 'Invoice aktif', value: '328', change: '+8.4%', icon: 'invoice', color: 'bg-rose' },
+          { label: 'Dalam pengiriman', value: '86', change: '12 tiba segera', icon: 'shipping', color: 'bg-yellow' },
+          { label: 'Fee belum dibayar', value: '24', change: 'Rp 18,4 jt', icon: 'fees', color: 'bg-coral' },
         ]
       : [
-          { label: 'Total invoice', value: '18', change: '3 bulan ini', icon: '▤', color: 'bg-lavender' },
-          { label: 'Dalam proses', value: '4', change: '2 on ship', icon: '▣', color: 'bg-rose' },
-          { label: 'Fee belum dibayar', value: '2', change: 'Rp 1,8 jt', icon: '◇', color: 'bg-yellow' },
-          { label: 'Pesanan selesai', value: '12', change: 'Semua waktu', icon: '✓', color: 'bg-teal' },
+          { label: 'Total invoice', value: '18', change: '3 bulan ini', icon: 'invoice', color: 'bg-lavender' },
+          { label: 'Dalam proses', value: '4', change: '2 on ship', icon: 'process', color: 'bg-rose' },
+          { label: 'Fee belum dibayar', value: '2', change: 'Rp 1,8 jt', icon: 'fees', color: 'bg-yellow' },
+          { label: 'Pesanan selesai', value: '12', change: 'Semua waktu', icon: 'check', color: 'bg-teal' },
         ];
   }
 }
