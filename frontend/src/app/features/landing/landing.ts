@@ -26,7 +26,7 @@ import { BrnButton } from '@spartan-ng/brain/button';
     <main>
       <section id="jastip" class="scroll-mt-20 bg-canvas py-20 sm:py-24 lg:py-28">
         <div class="mx-auto max-w-7xl px-5 lg:px-8">
-          <div class="mx-auto max-w-5xl rounded-[32px] bg-surface-soft p-7 text-center sm:p-9">
+          <div class="mx-auto max-w-6xl rounded-[32px] bg-surface-soft p-7 text-center sm:p-9">
               <span class="inline-flex rounded-full bg-yellow-light px-4 py-2 text-sm font-semibold text-yellow-dark">Jastip Belanja Marketplace China</span>
               <h1 class="display mx-auto mt-6 max-w-5xl text-5xl text-ink-deep sm:text-6xl lg:text-[72px]">
                 Jastip belanja dari Alibaba, Taobao, dan 1688
@@ -36,7 +36,7 @@ import { BrnButton } from '@spartan-ng/brain/button';
               </p>
           </div>
 
-          <section id="jastip-options" class="whiteboard-shadow mx-auto mt-8 max-w-5xl overflow-hidden rounded-[32px] border border-hairline-soft bg-canvas">
+          <section id="jastip-options" class="whiteboard-shadow mx-auto mt-8 max-w-6xl overflow-hidden rounded-[32px] border border-hairline-soft bg-canvas">
             <div class="grid gap-0 lg:grid-cols-[.82fr_1.18fr]">
               <aside class="flex min-h-[360px] flex-col bg-primary p-7 text-white">
                 <span class="w-max rounded-full bg-white px-4 py-2 text-sm font-medium text-primary">Rate Jastip</span>
@@ -98,7 +98,7 @@ import { BrnButton } from '@spartan-ng/brain/button';
 
       <section id="topup" class="scroll-mt-20 bg-canvas py-20 sm:py-24">
         <div class="mx-auto max-w-7xl px-5 lg:px-8">
-          <div class="mb-10 max-w-3xl">
+          <div class="mx-auto mb-10 max-w-6xl">
             <span class="inline-flex rounded-full bg-yellow-light px-4 py-2 text-sm font-semibold text-yellow-dark">Topup Alipay/WePay</span>
             <h2 class="display mt-5 text-4xl text-ink-deep sm:text-5xl">Rate topup berdasarkan region dan jumlah RMB.</h2>
             <p class="mt-5 leading-7 text-slate">
@@ -202,7 +202,7 @@ import { BrnButton } from '@spartan-ng/brain/button';
 
       <section id="transfer" class="scroll-mt-20 bg-surface py-24">
         <div class="mx-auto max-w-7xl px-5 lg:px-8">
-          <div class="grid gap-8 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
+          <div class="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
             <div>
               <span class="rounded-full bg-yellow-light px-4 py-2 text-sm font-semibold text-yellow-dark">Transfer Bank China</span>
               <h2 class="display mt-5 text-4xl text-ink-deep sm:text-5xl">Transfer cepat. Biaya jelas.</h2>
