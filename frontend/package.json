@@ -24,6 +24,9 @@
     ]
   },
   "private": true,
+  "overrides": {
+    "@babel/core": "7.29.7"
+  },
   "dependencies": {
     "@angular/cdk": "^21.0.0",
     "@angular/common": "^21.0.0",

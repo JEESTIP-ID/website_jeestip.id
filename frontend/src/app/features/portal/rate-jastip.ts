@@ -8,19 +8,19 @@ import { BrnButton } from '@spartan-ng/brain/button';
   template: `
     <div>
       <p class="text-xs font-semibold uppercase tracking-[.05em] text-stone">RATE LAYANAN</p>
-      <h1 class="display mt-2 text-5xl text-ink-deep">Rate Jastip</h1>
-      <p class="mt-3 text-slate">Atur konten section jastip yang tampil pada landing page.</p>
+      <h1 class="display mt-2 text-5xl text-ink-deep">Rate Jastip Taobao</h1>
+      <p class="mt-3 text-slate">Atur single-setting rate jastip Taobao yang tampil pada landing page.</p>
     </div>
 
     <div class="mt-8 grid gap-6 xl:grid-cols-[1.05fr_.95fr]">
       <form class="panel p-6 md:p-8" (ngSubmit)="save()">
         <div class="mb-7 flex items-start gap-3 rounded-2xl bg-lavender p-4 text-sm text-blue">
           <span class="text-xl">ⓘ</span>
-          <p>Field ini dipakai untuk section jastip di landing page: judul, deskripsi, rate utama, dan pilihan marketplace.</p>
+          <p>Field ini mensimulasikan record singleton RATE_JASTIP_TAOBAO_MAIN untuk landing page.</p>
         </div>
 
-        <label class="block text-sm font-medium">ID Section
-          <input class="input mt-2 bg-surface" value="SECTION_JASTIP_MAIN" disabled>
+        <label class="block text-sm font-medium">ID Rate
+          <input class="input mt-2 bg-surface" value="RATE_JASTIP_TAOBAO_MAIN" disabled>
         </label>
 
         <div class="mt-6 grid gap-5 md:grid-cols-2">
@@ -42,7 +42,7 @@ import { BrnButton } from '@spartan-ng/brain/button';
         </label>
 
         <div class="mt-6 grid gap-5 md:grid-cols-2">
-          <label class="block text-sm font-medium">Rate 1 Yuan RMB (IDR)
+          <label class="block text-sm font-medium">Rate Taobao 1 Yuan RMB (IDR)
             <div class="relative mt-2">
               <span class="pointer-events-none absolute inset-y-0 left-0 z-10 flex w-12 items-center justify-center border-r border-hairline-strong font-medium text-stone">Rp</span>
               <input class="input currency-input text-lg font-medium" name="rate" [(ngModel)]="rate" inputmode="numeric" min="1" required>
@@ -111,7 +111,7 @@ import { BrnButton } from '@spartan-ng/brain/button';
       <aside class="panel overflow-hidden p-0">
         <div class="border-b border-hairline-soft px-6 py-5">
           <p class="text-xs font-semibold uppercase tracking-[.05em] text-stone">Preview landing page</p>
-          <h2 class="mt-2 text-2xl font-semibold text-ink-deep">Section Jastip</h2>
+          <h2 class="mt-2 text-2xl font-semibold text-ink-deep">Rate Jastip Taobao</h2>
         </div>
 
         <div class="bg-canvas p-5">
